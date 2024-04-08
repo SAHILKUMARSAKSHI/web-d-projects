@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Subtitle</title>
+<style>
+  .container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  .subtitle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 20px; /* Adjust font size as needed */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    animation: moveSubtitle 10s linear infinite; /* Adjust animation duration as needed */
+  }
+
+  @keyframes moveSubtitle {
+    0% { left: 0; }
+    100% { left: calc(100% - 100px); } /* Adjust the value to move the subtitle fully across the container */
+  }
+</style>
 </head>
 <body>
-    <div class="spinner"></div>
+<div class="container">
+  <div class="subtitle">This is a moving subtitle</div>
+</div>
 </body>
 </html>

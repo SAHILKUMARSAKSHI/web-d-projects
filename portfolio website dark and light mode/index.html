@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <!-- CSS File  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="logo highlight">Air max</a>
+            <ul>
+                <li><a onclick="ChangeColor(this)" href="#">Dark</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a class="text-white" href="#">Plans</a></li>
+                <li><a class="text-white" href="#">Contact</a></li>
+            </ul>
+        </header>
+        <main class="page-content">
+            <div class="page-left">
+                <h1 class="heading">Hi</h1>
+                <h1 class="heading">I'm <span class="highlight">Andrew</span></h1>
+                <h1 class="heading">Web Developer</h1>
+                <p class="about">This is my official portfolio website to showcase my all works related to web development and UI design.</p>
+                <a href="#" class="download-button">Download CV</a>
+                <div class="social-links">
+                    <a href="#" class="bi bi-github" ></a>
+                    <a href="#" class="bi bi-linkedin" ></a>
+                    <a href="#" class="bi bi-dribbble" ></a>
+                    <a href="#" class="bi bi-facebook" ></a>
+                </div>
+            </div>
+            <div class="page-right">
+                <img src="media/object.png" alt="" class="object">
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function ChangeColor(button) {
+            var body = document.body;
+            body.classList.toggle("dark");
+            if (body.classList.contains("dark")) {
+                button.innerText = 'Light';
+            } else {
+                button.innerText = 'Dark';
+            }
+        }
+    </script>
+</body>
+</html>

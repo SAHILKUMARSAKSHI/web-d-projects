@@ -1,0 +1,218 @@
+/* Poppins Font Family  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: .3s;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --linear-color: linear-gradient(90deg, 
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 48%,
+    rgba(252, 176, 69, 1) 100%);
+}
+
+.highlight {
+    color: transparent;
+    background: rgba(131, 58, 180, 1);
+    background: var(--linear-color);
+    background-clip: text;
+}
+
+.container {
+    max-width: 980px;
+    margin: auto;
+    position: relative;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 6px;
+    z-index: 9;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+header ul a {
+    display: block;
+    padding: 8px 12px;
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+header ul a.text-white {
+    color: #fff;
+}
+
+header ul a:hover {
+    color: transparent;
+    background: rgba(131, 58, 180, 1);
+    background: var(--linear-color);
+    background-clip: text;
+}
+
+.page-content {
+    padding: 8px 6px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    align-items: center;
+}
+
+.page-content .heading {
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+.page-content .page-right {
+    position: relative;
+    width: 600px;
+    height: 400px;
+}
+
+.page-content .page-right .object {
+    position: absolute;
+    left: 0;
+    top: -50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-content .download-button {
+    display: block;
+    height: 40px;
+    width: fit-content;
+    padding: 0 16px;
+    background: #111;
+    margin-top: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.page-content .download-button::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    height: 0%;
+    background: var(--linear-color);
+    z-index: -1;
+    transition: .3s;
+}
+
+.page-content .download-button:hover::before { 
+    width: 100%;
+    height: 100%;
+}
+
+.page-content .social-links {
+    margin-top: 6rem;
+}
+
+.page-content .social-links a {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.page-content .social-links a:hover {
+    color: rgba(253, 29, 29, 1);
+}
+
+body {
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    background: #111;
+    transform: skew(-10deg);
+    z-index: -1;
+    transition: 1s;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: #111;
+    z-index: -1;
+    transition: 1s;
+}
+
+body.dark .container::before {
+    width: 100%;
+    transform: skew(0deg);
+}
+
+body.dark::before {
+    width: 100%;
+}
+
+body.dark ul a {
+    /* transition-delay: 1.2s; */
+    color: #fff;
+}
+
+body.dark ul a:hover {
+    color: transparent;
+    background: rgba(131, 58, 180, 1);
+    background: var(--linear-color);
+    background-clip: text;
+}
+
+body.dark .heading {
+    transition-delay: 1.2s;
+    color: #fff;
+}
+
+body.dark .about {
+    transition-delay: 1.2s;
+    color: #999;
+}
+
+body.dark .download-button {
+    background: #333;
+}
+
+body.dark .social-links a {
+    color: #fff;
+}
