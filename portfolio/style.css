@@ -12,24 +12,27 @@
 }
 
 :root {
-    --linear-color: linear-gradient(90deg, 
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 48%,
-    rgba(252, 176, 69, 1) 100%);
+    --linear-color: linear-gradient(60deg, 
+    rgba(0, 0, 0, 0.5) 100%,
+    rgba(0, 0, 0, 0.5) 100%,
+    rgba(0, 0, 0, 0.5) 100%);
 }
 
 .highlight {
     color: transparent;
-    background: rgba(131, 58, 180, 1);
-    background: var(--linear-color);
+    background: rgba(0, 0, 0, 0.5);
+    background: var(linear-color);
     background-clip: text;
+    transition-delay: 1.2s;
+    color: blue;
 }
 
 .container {
     max-width: 980px;
     margin: auto;
     position: relative;
-    min-height: 100vh;
+    min-height: 1vh;
+    /* overflow-y: auto; */
 }
 
 header {
@@ -70,6 +73,7 @@ header ul a:hover {
     background: rgba(131, 58, 180, 1);
     background: var(--linear-color);
     background-clip: text;
+
 }
 
 .page-content {
@@ -88,10 +92,12 @@ header ul a:hover {
 
 .page-content .page-right {
     position: relative;
-    width: 700px;
-    height: 500px;
-    /* border: 2px solid black; */
-    
+    width: 600px;
+    height: 400px;
+    /* mix-blend-mode: color-burn */
+    background: none;
+    background-color: lightgray;
+    border-radius: 15px;
 }
 
 .page-content .page-right .object {
@@ -100,8 +106,10 @@ header ul a:hover {
     /* top: -50px; */
     width: 100%;
     height: 100%;
+    margin: 1% 0% 0% 1%;
     object-fit: cover;
-    border-radius: 40px
+    border-radius: 15px;
+    filter: drop-shadow(0px 0px 20px gray);
     
 }
 
@@ -154,7 +162,12 @@ header ul a:hover {
 }
 
 body {
-    overflow: hidden;
+    overflow: auto;
+    background-color: lightgray;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: var(--bg);
 }
 
 .container::before {
@@ -164,7 +177,7 @@ body {
     top: 0;
     width: 25%;
     height: 100%;
-    background: #111;
+    /* background: #111; */
     transform: skew(-10deg);
     z-index: -1;
     transition: 1s;
@@ -192,7 +205,7 @@ body.dark::before {
 }
 
 body.dark ul a {
-    /* transition-delay: 1.2s; */
+    transition-delay: 0.2s;
     color: #fff;
 }
 
@@ -204,12 +217,12 @@ body.dark ul a:hover {
 }
 
 body.dark .heading {
-    transition-delay: 1.2s;
+    transition-delay: 0.2s;
     color: #fff;
 }
 
 body.dark .about {
-    transition-delay: 1.2s;
+    transition-delay: 0.2s;
     color: #999;
 }
 
@@ -221,112 +234,7 @@ body.dark .social-links a {
     color: #fff;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
-
-html, body {
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
-}
-
-body {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  background:#eee;
-}
-
-.cards-wrapper {
-  width:100%;
-  height:300px;
-  max-width:1200px;
-  overflow-x:hidden;
-  position:relative;
-}
-
-.cards {
-  position:absolute;
-  top:15px;
-  left:50%;
-  transform:translateX(-110px);
-  display:flex;
-  flex-direction:row;
-  width:1300px;
-  justify-content:space-between;
-}
-
-.card {
-  width:220px;
-  height:260px;
-  border-radius:14px;
-  border:none;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing:0.5px;
-  display:inline;
-  cursor:pointer;
-  box-sizing:border-box;
-  color:#000;
-}
-
-.card h2 {
-  font-size:2.6em;
-  font-weight:300;
-  margin-top:1.25em;
-}
-
-.card h4 {
-  text-transform:uppercase;
-}
-
-.icon svg {
-  overflow:visible;
-  stroke-width:1.25em;
-  width:3em;
-}
-
-.cards-wrapper::after {
-  content:'';
-  display:block;
-  position:absolute;
-  top:0;
-  width:100%;
-  max-width:1200px;
-  height:100%;
-  background:linear-gradient(90deg, #eee 0%, #ffffff00 30%, #ffffff00 70%, #eee 100%);
-  pointer-events:none;
-}
-
-.arrow-btn {
-  width:40px;
-  height:40px;
-  background:#fff;
-  border-radius:50%;
-  border:none;
-  box-shadow: 0 6px 8px #00000030;
-  position:absolute;
-  top:50%;
-  left:20px;
-  transform:translateY(-50%);
-  z-index:1000;
-  cursor:pointer;
-}
-
-.arrow-btn-next {
-  left:auto;
-  right:20px;
-}
-
-.arrow-btn svg {
-  fill:#333;
-  position:absolute;
-  height:80%;  
-  left:50%;
-  top:50%;
-  transform:translate(-60%,-50%);
-}
-
-.arrow-btn-next svg {
-  transform:translate(-40%,-50%);
-}
+main {
+    width: 60ch;
+    max-width: 100%;
+  }

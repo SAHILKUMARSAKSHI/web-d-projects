@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Website</title>
+    <!-- CSS File  -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Bootstrap Icon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar container">
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button onclick="document.querySelector('.navbar').classList.toggle('active')" class="nav-menu-button">
+            <i class="bi bi-list"></i>
+        </button>
+    </nav>
+
+    <main class="container">
+        <div class="hero-content">
+            <div class="text-content">
+                <h1>Hi</h1>
+                <h1>I'am Ellish</h1>
+                <h1 class="hightlight">Web Designer</h1>
+                <a href="#" class="continue">Continue</a>
+                <div class="social-links">
+                    <a href="#">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-dribbble"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="image-content">
+                <div class="bg-image">
+                    <img src="media/person.png" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
